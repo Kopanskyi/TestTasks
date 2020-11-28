@@ -6,7 +6,13 @@ namespace Rail_Fence_Cipher
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var text = "WEAREDISCOVEREDFLEEATONCE";
+            var encodedText = RailFenceCipher.Encode(text, 5);
+            var decodedText = RailFenceCipher.Decode(encodedText, 5);
+
+            Console.WriteLine(text);
+            Console.WriteLine(encodedText);
+            Console.WriteLine(decodedText);
             Console.ReadKey();
         }
     }
