@@ -1,5 +1,4 @@
-﻿
-namespace Sortable_Shapes.Interfaces
+﻿namespace Sortable_Shapes.Interfaces
 {
     interface IShape
     {

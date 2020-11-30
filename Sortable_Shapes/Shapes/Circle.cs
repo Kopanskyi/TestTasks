@@ -1,9 +1,8 @@
-﻿using Sortable_Shapes.Interfaces;
-using System;
+﻿using System;
 
 namespace Sortable_Shapes.Shapes
 {
-    class Circle : IShape, IComparable
+    class Circle : Shape 
     {
         public double Radius { get; set; }
 
@@ -12,39 +11,10 @@ namespace Sortable_Shapes.Shapes
             Radius = radius;
         }
 
-        public double GetArea()
+        public override double GetArea()
         {
             return Math.Pow(Math.PI * Radius, 2);
         }
 
-        public int CompareTo(object obj)
-        {
-            if (obj == null)
-            {
-                return 1;
-            }
-
-            var otherShape = obj as IShape;
-
-            if (otherShape == null)
-            {
-                throw new ArgumentException("Object is not a Shape");
-            }
-
-            var thisArea = GetArea();
-            var otherArea = otherShape.GetArea();
-
-            if (thisArea > otherArea)
-            {
-                return 1;
-            }
-
-            if (thisArea < otherArea)
-            {
-                return -1;
-            }
-
-            return 0;
-        }
     }
 }
